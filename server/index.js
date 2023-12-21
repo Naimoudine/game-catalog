@@ -9,6 +9,10 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
+app.use('/', (req, res) => {
+  res.send("Server is running.");
+});
+
 app.get('/api/games', async (req, res) => {
   try {
     const response = await axios.get(`https://api.rawg.io/api/games?key=${process.env.API_KEY}`, { params: req.query });
