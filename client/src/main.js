@@ -10,7 +10,7 @@ import router from './router'
 
 const app = createApp(App)
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'https://game-catalog-server.vercel.app/api/games';
 axios.defaults.headers.common['Authorization'] = `BEARER ${import.meta.env.VITE_API_KEY}`;
 
 app.config.globalProperties.$axios = axios;
