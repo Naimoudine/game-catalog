@@ -13,7 +13,7 @@ const todaysDate = new Date().toLocaleDateString('fr-CA');
 
 const fetchTopRatedGames = async () => {
   try {
-    const res = await axios.get('https://game-catalog-server.vercel.app/api/games', { params: { ordering: '-rating' } });
+    const res = await axios.get('/api/games', { params: { ordering: '-rating' } });
     return res.data.results;
   } catch (error) {
     console.error('Error fetching top rated games:', error);
@@ -50,6 +50,7 @@ const handleTopRated = () => {
   store.orderBy.orderByRatingDsc = true;
   store.orderBy.orderByDateDsc = false;
 };
+
 
 </script>
 
